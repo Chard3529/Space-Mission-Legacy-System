@@ -1,32 +1,41 @@
 # Space Mission Kata
 
-`SpaceMission` reads telemetry during a mission and logs it. Mission control
-wants to change how it logs readings, but nobody trusts the class enough to
-touch it — there isn't a single test on it.
+`SpaceMission` reads telemetry during a mission and logs it.
 
 ## Your task
 
-Write a unit test for `SpaceMission.runMission()` that checks it logs a
-temperature reading correctly. A stub is waiting for you at
-[src/test/java/no/loopacademy/SpaceMissionTest.java](src/test/java/no/loopacademy/SpaceMissionTest.java).
+Mission control now wants oxygen readings logged too. `TelemetryReading.type`
+already anticipates `"OXYGEN"` (see the comment on the field), but
+`SpaceMission.runMission()` doesn't have a branch for it — right now an
+oxygen reading falls into the `else` and gets logged as `Unknown reading`.
 
-**Rules for this pass:**
-
-- Don't modify `SpaceMission`, `TelemetryClient`, `Config`, or
-  `TelemetryReading` yet — production code is off limits for now. Just try
-  to Arrange / Act / Assert.
-- When something blocks you, write down *in your own words* what's actually
-  stopping you before you look anywhere else. Naming the problem precisely
-  is the point of this exercise, not just getting past it.
-
-Run the test with:
+Add a branch to `runMission()` that logs oxygen readings the same way the
+existing ones are logged, e.g.:
 
 ```
-./gradlew test
+Oxygen: 20.9 % at 1732000000000
 ```
 
-When you've named the problem — or given it a solid try and want to compare
-notes — check out the `solution` branch. It has a table mapping each
-problem you'll hit to the specific technique from *Working Effectively with
-Legacy Code* (Michael Feathers) that fixes it; a copy of the book is in
-[refs/](refs/) if you want to read the chapter behind a technique.
+That's it. That's the task.
+
+## One thing to decide before you start editing
+
+`runMission()` already has two similar branches in there (`TEMP`,
+`PRESSURE`). You're about to add a third to the same method, in the same
+class, that has never had a test written against it.
+
+Before you touch it: how will you know your change didn't break the
+existing TEMP/PRESSURE logging while you were in there? If your honest
+answer is "I'll run it and read the output," sit with that for a second —
+would that catch a regression next month, or in a PR review, or on a build
+server?
+
+Whatever you decide to do about that *is* the exercise. There's no
+`src/test` file to nudge you either way — if you decide you want one,
+that decision, and what happens when you try, is the point.
+
+When you've either got a test in place or have a clear, specific reason you
+couldn't get one, check out the `solution` branch. It maps what you ran
+into to the exact technique from *Working Effectively with Legacy Code*
+(Michael Feathers) that resolves it — a copy of the book is in
+[refs/](refs/).

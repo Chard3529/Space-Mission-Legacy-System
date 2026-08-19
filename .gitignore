@@ -44,11 +44,7 @@ bin/
 ### Reference material (copyrighted, not for version control) ###
 refs/
 
-<<<<<<< HEAD
 
 mission_report.txt
 gradle.properties
-=======
-gradle.properties
-mission_report.txt
->>>>>>> 236615739155327c9ea15fbb792b85b0d1170a18
+

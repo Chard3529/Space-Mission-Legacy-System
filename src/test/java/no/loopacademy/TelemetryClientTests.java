@@ -61,6 +61,19 @@ public class TelemetryClientTests {
 
     @Test
     public void readTelemetryReadingValueIsBetweenZeroAndHundred(){
-        assertTrue(true);
+        boolean expectedResult = true;
+
+        var telemetryClient = new TelemetryClient();
+        TelemetryReading telemetryReading = telemetryClient.read();
+
+        double value = telemetryReading.value;
+
+        double lowerLimit = 0;
+        double highestLimit = 100;
+
+        boolean actualResult = (value > lowerLimit) && (value < highestLimit);
+
+        assertEquals(expectedResult, actualResult);
+
     }
 }

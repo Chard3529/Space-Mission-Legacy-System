@@ -6,10 +6,10 @@
 
 Mission control now wants oxygen readings logged too. `TelemetryReading.type`
 already anticipates `"OXYGEN"` (see the comment on the field), but
-`SpaceMission.runMission()` doesn't have a branch for it — right now an
+`SpaceMission.runMission()` doesn't have a case for it — right now an
 oxygen reading falls into the `else` and gets logged as `Unknown reading`.
 
-Add a branch to `runMission()` that logs oxygen readings the same way the
+Add a case to `runMission()` that logs oxygen readings the same way the
 existing ones are logged, e.g.:
 
 ```
@@ -20,7 +20,7 @@ That's it. That's the task.
 
 ## One thing to decide before you start editing
 
-`runMission()` already has two similar branches in there (`TEMP`,
+`runMission()` already has two similar cases in there (`TEMP`,
 `PRESSURE`). You're about to add a third to the same method, in the same
 class, that has never had a test written against it.
 

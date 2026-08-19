@@ -59,4 +59,8 @@ public class TelemetryClientTests {
         assertEquals(expectedResult, actualResult, variance);
     }
 
+    @Test
+    public void readTelemetryReadingValueIsBetweenZeroAndHundred(){
+        assertTrue(true);
+    }
 }

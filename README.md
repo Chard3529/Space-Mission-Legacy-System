@@ -37,5 +37,4 @@ that decision, and what happens when you try, is the point.
 When you've either got a test in place or have a clear, specific reason you
 couldn't get one, check out the `solution` branch. It maps what you ran
 into to the exact technique from *Working Effectively with Legacy Code*
-(Michael Feathers) that resolves it — a copy of the book is in
-[refs/](refs/).
+(Michael Feathers) that resolves it.

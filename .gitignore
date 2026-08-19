@@ -43,3 +43,6 @@ bin/
 
 ### Reference material (copyrighted, not for version control) ###
 refs/
+
+gradle.properties
+mission_report.txt

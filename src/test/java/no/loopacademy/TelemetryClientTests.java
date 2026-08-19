@@ -48,17 +48,15 @@ public class TelemetryClientTests {
 
     @Test
     public void readTelemetryReadingTimeStampIsWithinOneSecondOfCurrentTime(){
-        long currentTime = System.currentTimeMillis();
-        long expectedResult = currentTime + 1000;
+        long expectedResult = System.currentTimeMillis();
+        int variance = 1000;
 
         var telemetryClient = new TelemetryClient();
-
         TelemetryReading telemetryReading = telemetryClient.read();
 
         long actualResult = telemetryReading.timestamp;
 
-
-        assertEquals(expectedResult, actualResult);
+        assertEquals(expectedResult, actualResult, variance);
     }
 
 }

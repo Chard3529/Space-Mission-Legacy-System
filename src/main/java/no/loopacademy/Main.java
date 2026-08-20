@@ -7,8 +7,9 @@ public class Main {
 
 
         SpaceMission mission = new SpaceMission();
-        mission.runMission();
-        mission.emergencyLog("oxygen leak detected");
+        FileWrite writer = new FileWrite();
+        mission.runMission(writer);
+        
 
 
 

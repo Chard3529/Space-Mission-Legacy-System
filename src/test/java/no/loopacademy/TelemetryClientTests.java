@@ -76,4 +76,18 @@ public class TelemetryClientTests {
         assertEquals(expectedResult, actualResult);
 
     }
+
+    @Test
+    public void runMission_checkForPassedString_aPassedStringValue(){
+        SpaceMission mission = new SpaceMission();
+        TestWrite writer = new TestWrite();
+        mission.runMission(writer);
+
+        String unexpectedWrittenResult = "";
+        String actualWrittenResult = writer.getTest_field();
+
+       
+        assertNotEquals(unexpectedWrittenResult, actualWrittenResult);
+    }
+
 }

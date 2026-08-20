@@ -46,10 +46,8 @@ public class SpaceMissionTests {
 
         String writerOutput = testWriter.getTest_field();
 
-        String[] writerOutputList = writerOutput.split("\n");
-
-        String[] wordsFirstLine = writerOutputList[0].split(" ");
-
+        String[] lines = writerOutput.split("\n");
+        String[] wordsFirstLine = lines[0].split(" ");
         String actualResult = wordsFirstLine[0];
 
         assertEquals(expectedResult, actualResult);

@@ -34,7 +34,7 @@ public class TelemetryClientTests {
     public void readTelemetryReadingTypeIsTempOrPressure(){
         boolean expectedResult = true;
 
-        String temp = "TEMP";
+        String temp = "TEMPs";
         String pressure = "PRESSURE";
 
         var telemetryClient = new TelemetryClient();
